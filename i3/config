@@ -19,11 +19,14 @@ exec --no-startup-id /usr/lib64/gnome-settings-daemon/gnome-settings-daemon
 exec --no-startup-id compton 
 exec --no-startup-id telegram
 exec --no-startup-id google-chrome-stable
+exec --no-startup-id redshift
 
-assign [class="Gnome-terminal"] 1:
-assign [class="google-chrome"] 2:
-assign [class="Telegram"] 3:
-assign [class="Nautilus"] 4:
+assign [class="Terminator"] 1:
+assign [class="google-chrome"] 3:
+assign [class="Atom"] 2:
+assign [class="Telegram"] 4:
+assign [class="Nautilus"] 5:
+for_window [class="Spotify"] move to workspace 6:
 
 # user custom binds
 bindsym $mod+g exec google-chrome-stable
@@ -78,7 +81,7 @@ font pango:Droid Sans 19
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -140,11 +143,11 @@ bindsym $mod+a focus parent
 
 # switch to workspace
 bindsym $mod+1 workspace 1:
-bindsym $mod+2 workspace 2:
-bindsym $mod+3 workspace 3:
-bindsym $mod+4 workspace 4:
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
+bindsym $mod+2 workspace 2:
+bindsym $mod+3 workspace 3:
+bindsym $mod+4 workspace 4:
+bindsym $mod+5 workspace 5:
+bindsym $mod+6 workspace 6:
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
@@ -209,7 +212,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     strip_workspace_numbers yes
-    font pango:Droid Sans, Awesome 22
+    font pango:Droid Sans, Awesome 25
     colors {
         background #282a36
             statusline #bd93f9		

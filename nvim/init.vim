@@ -7,44 +7,27 @@ colorscheme pablo
 :set clipboard=unnamed
 :set clipboard=unnamedplus
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin('~/.config/nvim/plugged')
+Plug 'VundleVim/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'itchyny/lightline.vim'
+Plug 'fatih/vim-go'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive'
+call plug#end()
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'scrooloose/nerdtree'
-
-Plugin 'scrooloose/syntastic'
-
-Plugin 'itchyny/lightline.vim'
-
-Plugin 'fatih/vim-go'
-
-Plugin 'Shougo/deoplete.nvim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on
 
 set t_Co=256
-set guifont=Iosevka\ 11
-set laststatus=2
-set tabstop=4
-set shiftwidth=4
-set expandtab
 
 command Rootsave w !sudo tee % C
 map <C-n> :NERDTreeToggle<CR>
+map <F8> :TagbarToggle<CR>
 
 " lightline
-
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'component': {
@@ -53,5 +36,10 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
-
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 let g:deoplete#enable_at_startup = 1

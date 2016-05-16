@@ -24,12 +24,12 @@ PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1
 export EDITOR=vim
 
 # go exports
-export GOPATH=/home/gsora/GoPath
-export PATH=$PATH:$GOPATH/bin:/opt/android-sdk/platform-tools/
+export GOPATH=/home/gsora/go
+export PATH=$PATH:$GOPATH/bin
 export TERM=xterm-256color
 
 zstyle ':completion:*' rehash true
 
 alias ls='ls --color=auto'
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/gsora/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

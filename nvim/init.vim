@@ -16,7 +16,7 @@ let PlugDir = "~/.config/nvim/plugged"
 call plug#begin(PlugDir)
 Plug 'VundleVim/Vundle.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'itchyny/lightline.vim'
 Plug 'fatih/vim-go'
 Plug 'Shougo/deoplete.nvim'
@@ -25,6 +25,8 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jiangmiao/auto-pairs'
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -72,7 +74,7 @@ let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-let g:go_fmt_command = "gofmt"
+let g:go_fmt_command = "goimports"
 let g:deoplete#enable_at_startup = 1
 " Show a list of interfaces which is implemented by the type under your cursor
 au FileType go nmap <Leader>s <Plug>(go-implements)
@@ -83,6 +85,8 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 set t_Co=256
 set background=light
 colorscheme PaperColor
+autocmd! BufWritePost * Neomake
+let g:ctrlp_map = '<c-p>'
 
 " lightline
 let g:lightline = {

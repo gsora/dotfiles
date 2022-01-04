@@ -3,6 +3,7 @@ set mouse=a
 set number
 let mapleader=","
 
+set clipboard=unnamed
 set noshowmode 
 call plug#begin('~/.vim/plugged')
 

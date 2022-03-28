@@ -5,6 +5,7 @@ return {
 		"Iosevka SS11",
 		"BlexMono Nerd Font",
 	}),
+	enable_wayland = true,
 
 	font_size = 16,
 	color_scheme = "ayu",

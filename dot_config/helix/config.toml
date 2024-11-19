@@ -1,0 +1,39 @@
+theme = "kanagawa-dragon"
+
+[editor]
+line-number = "absolute"
+mouse = true
+true-color = true
+rulers = [120]
+color-modes = true
+bufferline = "multiple"
+popup-border = "all"
+cursorline = true
+completion-timeout = 10
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.indent-guides]
+render = true
+character = "╎"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal.space]
+w = ":write-all"
+i = ":toggle lsp.display-inlay-hints"
+t = ":toggle soft-wrap.enable"
+l = ":lsp-restart"
+# When used inside `Some(expr)` or `Ok(expr)`, replaces it with `expr`
+# Very useful for writing Rust.
+# x = "@mi(d<A-o><A-o>R" 

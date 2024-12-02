@@ -20,7 +20,7 @@
 [user]
         name = Gianguido Sorà
         email = gsora@users.noreply.github.com
-	signingkey = /home/gsora/.ssh/id_ed25519.pub
+	signingkey = ~/.ssh/id_ed25519.pub
 
 [push]
 	autoSetupRemote = true
